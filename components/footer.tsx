@@ -63,7 +63,7 @@ export function Footer() {
             <div className="flex space-x-2">
               <Button variant="ghost" size="sm" asChild>
                 <Link
-                  href="https://github.com/muhammadaqib86"
+                  href="https://github.com/muhammada86"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -84,7 +84,7 @@ export function Footer() {
               © 2025 Tags Input Field. Made with{" "}
               <Heart className="inline h-3 w-3 text-red-500" /> by
               <Link
-                href="https://github.com/muhammadaqib86"
+                href="https://github.com/muhammada86"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary hover:underline ml-1"

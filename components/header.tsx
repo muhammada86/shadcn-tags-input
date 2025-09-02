@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ModeToggle } from "@/components/mode-toggle"
-import { Github, Tag, Menu, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Github, Tag, Menu, X } from "lucide-react";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
     { name: "Getting Started", href: "#getting-started" },
     { name: "Demo", href: "#demo" },
     { name: "API", href: "#api" },
     { name: "Examples", href: "#examples" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -50,7 +50,11 @@ export function Header() {
           {/* Actions */}
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="https://github.com/muhammadaqib86" target="_blank" rel="noopener noreferrer">
+              <Link
+                href="https://github.com/muhammada86/shadcn-tags-input"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Github className="h-4 w-4" />
                 <span className="sr-only">GitHub</span>
               </Link>
@@ -58,8 +62,17 @@ export function Header() {
             <ModeToggle />
 
             {/* Mobile Menu Button */}
-            <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="h-4 w-4" />
+              ) : (
+                <Menu className="h-4 w-4" />
+              )}
             </Button>
           </div>
         </div>
@@ -83,5 +96,5 @@ export function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }

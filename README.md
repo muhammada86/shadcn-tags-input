@@ -1,7 +1,8 @@
-# TagsInputField Component
- A powerful, enterprise-grade React tags input component built with TypeScript, React Hook Form, Framer Motion, and shadcn/ui. Perfect for modern web applications requiring sophisticated tag management with smooth animations and comprehensive validation.
+# shadcn UI Tags Input Component
 
- ![Tags Input Demo](https://img.shields.io/badge/React-18+-blue.svg) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg)
+A powerful, enterprise-grade React tags input component built with TypeScript, React Hook Form, Framer Motion, and shadcn/ui. Perfect for modern web applications requiring sophisticated tag management with smooth animations and comprehensive validation.
+
+![Tags Input Demo](https://img.shields.io/badge/React-18+-blue.svg) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg) ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ---
 
@@ -14,12 +15,12 @@ For complete API reference, advanced examples, and live demos, visit:
 
 ## ✨ Features
 
-* 🎨 **Variants & Themes** – Supports multiple styles and sizes.
-* 📝 **Validation** – Built-in error messages with `react-hook-form`.
-* ⌨️ **Keyboard Support** – Add/remove tags with Enter/Backspace.
-* 🧩 **Integration** – Works with Shadcn form, input, and badge components.
-* 🚀 **Customizable** – Configure max tags, max length, duplicates, and suggestions.
-* 🔍 **Accessibility** – Full ARIA support.
+- 🎨 **Variants & Themes** – Supports multiple styles and sizes.
+- 📝 **Validation** – Built-in error messages with `react-hook-form`.
+- ⌨️ **Keyboard Support** – Add/remove tags with Enter/Backspace.
+- 🧩 **Integration** – Works with Shadcn form, input, and badge components.
+- 🚀 **Customizable** – Configure max tags, max length, duplicates, and suggestions.
+- 🔍 **Accessibility** – Full ARIA support.
 
 ---
 
@@ -45,15 +46,15 @@ cp components/tags-input-field.tsx your-project/src/components/
 ### Basic Usage
 
 ```tsx
-import { TagsInputField } from "@/components/tags-input-field"
-import { useForm, FormProvider } from "react-hook-form"
+import { TagsInputField } from "@/components/tags-input-field";
+import { useForm, FormProvider } from "react-hook-form";
 
 function MyForm() {
   const form = useForm({
     defaultValues: {
-      skills: []
-    }
-  })
+      skills: [],
+    },
+  });
 
   return (
     <FormProvider {...form}>
@@ -65,7 +66,7 @@ function MyForm() {
         />
       </form>
     </FormProvider>
-  )
+  );
 }
 ```
 
