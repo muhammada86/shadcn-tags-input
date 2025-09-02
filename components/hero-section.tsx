@@ -35,7 +35,7 @@ export function HeroSection() {
 
             <Button variant="outline" size="lg" asChild>
               <Link
-                href="https://github.com"
+                href="https://github.com/muhammada86/shadcn-tags-input"
                 target="_blank"
                 rel="noopener noreferrer"
               >
