@@ -1,4 +1,4 @@
-# shadcn UI Tags Input Component
+# ShadCN UI Tags Input Component
 
 A powerful, enterprise-grade React tags input component built with TypeScript, React Hook Form, Framer Motion, and shadcn/ui. Perfect for modern web applications requiring sophisticated tag management with smooth animations and comprehensive validation.
 
