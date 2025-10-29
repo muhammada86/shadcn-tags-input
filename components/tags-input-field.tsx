@@ -51,7 +51,7 @@ const TagsInputFieldBase = <TFieldValues extends FieldValues>({
   disabled = false,
   className,
   maxTags,
-  maxLength = 5,
+  maxLength = 100,
   autoFocus = false,
   startIcon,
   endIcon,

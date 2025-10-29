@@ -1,16 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm, FormProvider } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { TagsInputField } from "@/components/tags-input-field"
-import { CodeBlock } from "@/components/code-block"
-import { Sparkles, Zap, Shield, Palette, Code, Users, Settings, Database, Globe, Briefcase, Heart } from "lucide-react"
+import { useState } from "react";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TagsInputField } from "@/components/tags-input-field";
+import { CodeBlock } from "@/components/code-block";
+import {
+  Sparkles,
+  Zap,
+  Shield,
+  Palette,
+  Code,
+  Users,
+  Settings,
+  Database,
+  Globe,
+  Briefcase,
+  Heart,
+} from "lucide-react";
 
 const formSchema = z.object({
   skills: z.array(z.string()).min(1, "At least one skill is required"),
@@ -20,12 +38,12 @@ const formSchema = z.object({
   frameworks: z.array(z.string()).optional(),
   tools: z.array(z.string()).optional(),
   categories: z.array(z.string()).optional(),
-})
+});
 
-type FormData = z.infer<typeof formSchema>
+type FormData = z.infer<typeof formSchema>;
 
 export function DemoSection() {
-  const [formData, setFormData] = useState<FormData | null>(null)
+  const [formData, setFormData] = useState<FormData | null>(null);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -38,11 +56,11 @@ export function DemoSection() {
       tools: [],
       categories: [],
     },
-  })
+  });
 
   const onSubmit = (data: FormData) => {
-    setFormData(data)
-  }
+    setFormData(data);
+  };
 
   const scenarios = [
     {
@@ -55,7 +73,16 @@ export function DemoSection() {
           description="Add your technical skills"
           placeholder="Type and press Enter..."
           maxTags={10}
-          suggestions={["JavaScript", "TypeScript", "Python", "Go", "Rust", "Java", "C++", "Swift"]}
+          suggestions={[
+            "JavaScript",
+            "TypeScript",
+            "Python",
+            "Go",
+            "Rust",
+            "Java",
+            "C++",
+            "Swift",
+          ]}
           variant="enterprise"
           startIcon={<Code className="w-4 h-4" />}
         />
@@ -72,7 +99,16 @@ export function DemoSection() {
           maxTags={8}
           maxLength={15}
           tagVariant="secondary"
-          suggestions={["React", "Next.js", "Vue", "Angular", "Node.js", "Express", "FastAPI", "Django"]}
+          suggestions={[
+            "React",
+            "Next.js",
+            "Vue",
+            "Angular",
+            "Node.js",
+            "Express",
+            "FastAPI",
+            "Django",
+          ]}
           startIcon={<Settings className="w-4 h-4" />}
         />
       ),
@@ -87,7 +123,14 @@ export function DemoSection() {
           placeholder="What interests you?"
           variant="minimal"
           tagVariant="outline"
-          suggestions={["AI/ML", "Web3", "Mobile", "DevOps", "Design", "Gaming"]}
+          suggestions={[
+            "AI/ML",
+            "Web3",
+            "Mobile",
+            "DevOps",
+            "Design",
+            "Gaming",
+          ]}
           startIcon={<Heart className="w-4 h-4" />}
         />
       ),
@@ -130,7 +173,16 @@ export function DemoSection() {
           maxTags={15}
           tagVariant="destructive"
           variant="enterprise"
-          suggestions={["VS Code", "Git", "Docker", "Kubernetes", "AWS", "Vercel", "Figma", "Postman"]}
+          suggestions={[
+            "VS Code",
+            "Git",
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "Vercel",
+            "Figma",
+            "Postman",
+          ]}
           startIcon={<Database className="w-4 h-4" />}
         />
       ),
@@ -146,7 +198,16 @@ export function DemoSection() {
           variant="minimal"
           maxTags={6}
           allowDuplicates={true}
-          suggestions={["Frontend", "Backend", "Full-stack", "Mobile", "Desktop", "DevOps", "Design", "Research"]}
+          suggestions={[
+            "Frontend",
+            "Backend",
+            "Full-stack",
+            "Mobile",
+            "Desktop",
+            "DevOps",
+            "Design",
+            "Research",
+          ]}
           startIcon={<Briefcase className="w-4 h-4" />}
         />
       ),
@@ -161,12 +222,21 @@ export function DemoSection() {
           description="Tools for team collaboration"
           maxTags={8}
           maxLength={20}
-          suggestions={["Slack", "Discord", "Notion", "Jira", "Trello", "Asana", "Linear", "GitHub"]}
+          suggestions={[
+            "Slack",
+            "Discord",
+            "Notion",
+            "Jira",
+            "Trello",
+            "Asana",
+            "Linear",
+            "GitHub",
+          ]}
           startIcon={<Users className="w-4 h-4" />}
         />
       ),
     },
-  ]
+  ];
 
   const basicUsageCode = `import { TagsInputField } from "@/components/tags-input-field"
 import { useForm, FormProvider } from "react-hook-form"
@@ -189,7 +259,7 @@ function MyForm() {
       />
     </FormProvider>
   )
-}`
+}`;
 
   const advancedUsageCode = `<TagsInputField
   name="technologies"
@@ -205,16 +275,18 @@ function MyForm() {
     "Node.js", "Python", "Go", "Rust"
   ]}
   startIcon={<Zap className="w-4 h-4" />}
-/>`
+/>`;
 
   return (
     <section id="demo" className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Interactive Demo & 7 Usage Scenarios</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Interactive Demo & 7 Usage Scenarios
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore different configurations and use cases. Test the component with various settings and see real-time
-            results.
+            Explore different configurations and use cases. Test the component
+            with various settings and see real-time results.
           </p>
         </div>
 
@@ -226,18 +298,26 @@ function MyForm() {
                 Live Demo - 7 Usage Scenarios
               </CardTitle>
               <CardDescription>
-                Try different configurations and see how the component behaves in various contexts.
+                Try different configurations and see how the component behaves
+                in various contexts.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <FormProvider {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-8"
+                >
                   <div className="grid gap-6 md:grid-cols-2">
                     {scenarios.map((scenario, index) => (
                       <div key={index} className="space-y-3">
                         <div>
-                          <h4 className="font-medium text-sm">{scenario.title}</h4>
-                          <p className="text-xs text-muted-foreground">{scenario.description}</p>
+                          <h4 className="font-medium text-sm">
+                            {scenario.title}
+                          </h4>
+                          <p className="text-xs text-muted-foreground">
+                            {scenario.description}
+                          </p>
                         </div>
                         {scenario.component}
                       </div>
@@ -253,7 +333,9 @@ function MyForm() {
               {formData && (
                 <div className="mt-6 p-4 bg-muted rounded-lg">
                   <h4 className="font-medium mb-2">Form Data:</h4>
-                  <pre className="text-sm overflow-x-auto whitespace-pre-wrap">{JSON.stringify(formData, null, 2)}</pre>
+                  <pre className="text-sm overflow-x-auto whitespace-pre-wrap">
+                    {JSON.stringify(formData, null, 2)}
+                  </pre>
                 </div>
               )}
             </CardContent>
@@ -268,44 +350,49 @@ function MyForm() {
                 <Shield className="w-5 h-5 text-primary" />
                 Key Features
               </CardTitle>
-              <CardDescription>Enterprise-grade features built for production applications.</CardDescription>
+              <CardDescription>
+                Enterprise-grade features built for production applications.
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="mt-0.5">
+                <Badge variant="secondary" className="mt-0.5 min-w-32">
                   <Zap className="w-3 h-3 mr-1" />
                   Performance
                 </Badge>
                 <div>
                   <p className="font-medium">Optimized Rendering</p>
                   <p className="text-sm text-muted-foreground">
-                    Memoized components with React Hook Form integration for minimal re-renders.
+                    Memoized components with React Hook Form integration for
+                    minimal re-renders.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="mt-0.5">
+                <Badge variant="secondary" className="mt-0.5 min-w-32">
                   <Palette className="w-3 h-3 mr-1" />
                   Variants
                 </Badge>
                 <div>
                   <p className="font-medium">Multiple Design Systems</p>
                   <p className="text-sm text-muted-foreground">
-                    Enterprise, minimal, and default variants with customizable tag styles.
+                    Enterprise, minimal, and default variants with customizable
+                    tag styles.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Badge variant="secondary" className="mt-0.5">
+                <Badge variant="secondary" className="mt-0.5 min-w-32">
                   <Shield className="w-3 h-3 mr-1" />
                   Validation
                 </Badge>
                 <div>
                   <p className="font-medium">Form Integration</p>
                   <p className="text-sm text-muted-foreground">
-                    Built-in validation with React Hook Form and Zod schema support.
+                    Built-in validation with React Hook Form and Zod schema
+                    support.
                   </p>
                 </div>
               </div>
@@ -315,7 +402,9 @@ function MyForm() {
           <Card>
             <CardHeader>
               <CardTitle>Usage Statistics</CardTitle>
-              <CardDescription>See how the component performs across different scenarios.</CardDescription>
+              <CardDescription>
+                See how the component performs across different scenarios.
+              </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex justify-between items-center">
@@ -342,24 +431,36 @@ function MyForm() {
         <Card>
           <CardHeader>
             <CardTitle>Code Examples</CardTitle>
-            <CardDescription>Copy and paste these examples to get started quickly.</CardDescription>
+            <CardDescription>
+              Copy and paste these examples to get started quickly.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="basic" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="basic">Basic Usage</TabsTrigger>
-                <TabsTrigger value="advanced">Advanced Configuration</TabsTrigger>
+                <TabsTrigger value="advanced">
+                  Advanced Configuration
+                </TabsTrigger>
               </TabsList>
               <TabsContent value="basic" className="mt-4">
-                <CodeBlock code={basicUsageCode} title="Basic Implementation" language="tsx" />
+                <CodeBlock
+                  code={basicUsageCode}
+                  title="Basic Implementation"
+                  language="tsx"
+                />
               </TabsContent>
               <TabsContent value="advanced" className="mt-4">
-                <CodeBlock code={advancedUsageCode} title="Advanced Configuration" language="tsx" />
+                <CodeBlock
+                  code={advancedUsageCode}
+                  title="Advanced Configuration"
+                  language="tsx"
+                />
               </TabsContent>
             </Tabs>
           </CardContent>
         </Card>
       </div>
     </section>
-  )
+  );
 }

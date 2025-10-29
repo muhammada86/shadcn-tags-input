@@ -128,14 +128,14 @@ function MyComponent() {
                     language="bash"
                     title="Installation Commands"
                   />
-                  <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <div className="mt-6 p-4 bg-primary-50 dark:bg-primary-950/20 rounded-lg border border-primary-200 dark:border-primary-800">
                     <div className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-primary-600 dark:text-primary-400 mt-0.5" />
                       <div>
-                        <p className="font-medium text-blue-900 dark:text-blue-100">
+                        <p className="font-medium text-primary-900 dark:text-primary-100">
                           No Package Installation
                         </p>
-                        <p className="text-sm text-blue-700 dark:text-blue-300 mt-1">
+                        <p className="text-sm text-primary-700 dark:text-primary-300 mt-1">
                           Just copy the component file and install these
                           dependencies. No npm package to install.
                         </p>

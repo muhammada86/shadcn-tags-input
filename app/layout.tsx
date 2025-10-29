@@ -1,11 +1,11 @@
 import type React from "react";
 import type { Metadata } from "next";
+import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Suspense } from "react";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ShadCN Tags Input - React Component Library",
